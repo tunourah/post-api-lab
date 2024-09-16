@@ -28,8 +28,7 @@ button.addEventListener('click', () => {
         let btn = document.createElement('button');
         btn.textContent = 'Delete';
 
-        
-        btn2.innerHTML = '';  
+         
         btn2.appendChild(btn);
 
         btn.addEventListener('click', () => {
