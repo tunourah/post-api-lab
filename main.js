@@ -36,7 +36,8 @@ button.addEventListener('click', () => {
                 method: 'DELETE'
             })
             .then(() => {
-               
+                input.textContent = '';
+                input2.textContent = '';
                 p.textContent = '';
                 link.textContent = '';
                 btn2.innerHTML = '';   
