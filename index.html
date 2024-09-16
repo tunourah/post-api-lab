@@ -1,46 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post API</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            text-align: center;
-            background-color: #f1f1f1;
-            padding-top: 50px; 
-        }
+      body {
+        text-align: center;
+        background-color: #f1f1f1;
+        padding-top: 50px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      #btn2 {
+        margin-top: 20px;
+      }
+      @media (max-width: 576px) {
         .container {
-            max-width: 500px; 
-            margin: 0 auto;  
-            background-color: #fff;  
-            padding: 30px; 
-            border-radius: 8px;  
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+          padding: 15px;
         }
-        #btn2 {
-            margin-top: 20px;  
+        img {
+          width: 100%;
+          height: auto;
         }
+      }
     </style>
-</head>
-<body>
-    <div class="container" style="width: 70vw;">
-        <h3 class="text-dark">  Save  URL Image  </h3>
-        <div class="form-group">
-            <input id="inp" type="text" class="form-control" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-            <input id="inp2" type="text" class="form-control" placeholder="Enter your image URL">
-        </div>
-        <button id="btn" class="btn btn-primary">Post</button>
-        <p id="res" class="mt-3"></p>
-        <a id="link" href="" target="_blank" class="d-block mb-3"></a>
-        <div id="btn2"></div>
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="text-dark">Save URL Image</h3>
+      <div class="form-group">
+        <input
+          id="inp"
+          type="text"
+          class="form-control"
+          placeholder="Enter your name"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          id="inp2"
+          type="text"
+          class="form-control"
+          placeholder="Enter your image URL"
+        />
+      </div>
+      <button id="btn" class="btn btn-primary">Post</button>
+      <p id="res" class="mt-3"></p>
+      <a id="link" href="" target="_blank" class="d-block mb-3"></a>
+      <div id="btn2"></div>
     </div>
 
     <script src="main.js"></script>
-  
-</body>
+  </body>
 </html>
