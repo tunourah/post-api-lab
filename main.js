@@ -4,7 +4,7 @@ let input2 = document.getElementById('inp2');
 let btn2 = document.getElementById('btn2');
 
 button.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();  
 
     if (input.value.trim() === '' || input2.value.trim() === '') {
         alert('Please fill in both fields.');
@@ -36,17 +36,17 @@ button.addEventListener('click', (event) => {
 });
 
 function fetchAndDisplayImages() {
-    btn2.innerHTML = ''; // Clear previous images
+    btn2.innerHTML = '';  
 
     fetch("https://66e7e6b3b17821a9d9da6ff8.mockapi.io/hold-image")
         .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok.');
+            
             return response.json();
         })
         .then(data => {
             data.forEach(item => {
                 let col = document.createElement('div');
-                col.classList.add('col-md-4', 'mb-4'); // Bootstrap column class for responsiveness
+                col.classList.add('col-md-4', 'mb-4');  
 
                 let container = document.createElement('div');
                 container.classList.add('d-flex', 'flex-column', 'align-items-center', 'p-4', 'border', 'rounded', 'bg-light');
@@ -61,7 +61,8 @@ function fetchAndDisplayImages() {
                 urlElement.alt = item.name;
                 urlElement.classList.add('img-fluid');
                 urlElement.style.maxWidth = '100%';
-                urlElement.style.height = 'auto';
+
+                urlElement.style.height = '50vh';
 
                 let btn = document.createElement('button');
                 btn.textContent = 'Delete';
@@ -79,18 +80,15 @@ function fetchAndDisplayImages() {
                         method: 'DELETE'
                     })
                     .then(response => {
-                        if (!response.ok) throw new Error('Network response was not ok.');
+                        
                         col.remove();
                     })
-                    .catch(error => {
-                        console.error('There has been a problem with your fetch operation:', error);
-                    });
+                    
                 });
             });
         })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
+         
+     
 }
 
 fetchAndDisplayImages();
