@@ -4,6 +4,10 @@ let input2 = document.getElementById('inp2');
 let btn2 = document.getElementById('btn2');
 
 button.addEventListener('click', () => {
+    if (input.value.trim() === '' || input2.value.trim() === '') {
+        alert('Please fill in both fields.');
+        return;  
+    }
     fetch("https://66e7e6b3b17821a9d9da6ff8.mockapi.io/hold-image", {
         method: 'POST',
         body: JSON.stringify({ 
